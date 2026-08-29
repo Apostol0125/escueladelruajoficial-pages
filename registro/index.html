@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head><meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="icon" href="/assets/favicon.png" />
+<link rel="stylesheet" href="/styles.css" /><title>Registro de Estudiantes | MAIER</title>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-LTMYRYYGVL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-LTMYRYYGVL');
+  </script>
+<style>
+.registration-note{margin:0 0 18px;padding:14px 16px;border-left:4px solid #d4af37;border-radius:8px;background:rgba(212,175,55,.09);color:#eef3f8;line-height:1.55}
+.registration-layout form small{display:block;margin:-5px 0 13px;color:#c8d2dd;line-height:1.4}.consent-label{display:grid!important;grid-template-columns:auto 1fr;gap:10px;align-items:start;padding:14px;border:1px solid rgba(212,175,55,.35);border-radius:10px}.consent-label input{width:20px!important;height:20px;margin-top:2px}.required-note{color:#c8d2dd;font-size:14px}.required-mark{color:#f2cf5b}.form-status{margin-top:12px;color:#f2cf5b;font-weight:700}
+</style></head>
+<body>
+<header class="topbar">
+  <a class="brand" href="/index.html">
+    <img src="/logoMAIER.png" alt="Logo oficial MAIER" />
+    <div><strong>Escuela Del Ruaj</strong><span>Ministerio Apostólico Internacional</span></div>
+  </a>
+  <button class="menu-btn" aria-label="Abrir menú">☰</button>
+  <nav class="nav">
+    <a href="/index.html">Inicio</a>
+    <a href="/programas/escuela-profetica.html">Escuela Profética</a>
+    <a href="/programas/raices-hebreas.html">Raíces Hebreas</a>
+    <a href="/programas/universidad-del-reino.html">Universidad</a>
+    <a href="/registro/index.html">Registro</a>
+    <a href="/biblioteca/index.html">Biblioteca</a>
+    <a href="/index.html#donaciones">Donaciones</a>
+  </nav>
+</header>
+<main>
+<section class="page-hero"><p class="kicker">Admisiones MAIER</p><h1>Registro de estudiantes</h1><p class="lead">Complete una solicitud por cada programa que desea estudiar. El equipo MAIER confirmará su admisión, horario y acceso oficial.</p></section>
+<section class="section section-dark">
+  <div class="registration-layout">
+    <div>
+      <h2>Proceso de admisión</h2><p class="registration-note"><strong>Este formulario es una solicitud.</strong> El registro no queda aprobado hasta recibir la confirmación oficial del equipo MAIER.</p>
+      <div class="process"><div><strong>1</strong><span>Enviar solicitud</span></div><div><strong>2</strong><span>Confirmación por el equipo MAIER</span></div><div><strong>3</strong><span>Acceso a Classroom, Meet, grupo y materiales</span></div></div>
+    </div>
+    <form id="registro-estudiantes">
+      <input type="hidden" name="origen" value="web-maier" />
+      <p class="required-note"><span class="required-mark">*</span> Campos obligatorios</p>
+      <label for="nombre">Nombre completo <span class="required-mark">*</span><input id="nombre" type="text" name="nombre" autocomplete="name" minlength="3" maxlength="100" required /></label>
+      <label for="email">Correo electrónico <span class="required-mark">*</span><input id="email" type="email" name="email" autocomplete="email" maxlength="150" required /></label>
+      <small>Use el mismo correo de Google que utilizará para Classroom y Meet.</small>
+      <label for="telefono">Teléfono / WhatsApp <span class="required-mark">*</span><input id="telefono" type="tel" name="telefono" autocomplete="tel" inputmode="tel" minlength="7" maxlength="25" required /></label>
+      <label for="ubicacion">Ciudad, estado y país <span class="required-mark">*</span><input id="ubicacion" type="text" name="ubicacion" autocomplete="address-level2" minlength="3" maxlength="120" required /></label>
+      <label for="programa">Programa de interés <span class="required-mark">*</span><select id="programa" name="programa" required><option value="">Seleccione</option><option>Escuela Profética</option><option>Raíces Hebreas</option><option>Universidad del Reino</option><option>Capellanía / Credenciales</option><option>Biblioteca / Materiales</option></select></label>
+      <label for="nivel">Nivel o ruta solicitada <span class="required-mark">*</span><select id="nivel" name="nivel" required disabled><option value="">Primero seleccione el programa</option></select></label>
+      <label for="modalidad">Modalidad preferida <span class="required-mark">*</span><select id="modalidad" name="modalidad" required><option value="">Seleccione</option><option>En línea</option><option>Presencial en Northfield, NJ</option><option>Necesito orientación</option></select></label>
+      <label for="contacto">Medio preferido de contacto <span class="required-mark">*</span><select id="contacto" name="contacto_preferido" required><option value="">Seleccione</option><option>WhatsApp</option><option>Correo electrónico</option><option>Llamada telefónica</option></select></label>
+      <label for="mensaje">Mensaje o información adicional<textarea id="mensaje" name="mensaje" rows="5" maxlength="1000" placeholder="Preguntas, experiencia previa o alguna necesidad especial."></textarea></label>
+      <label class="consent-label" for="consentimiento"><input id="consentimiento" type="checkbox" name="consentimiento" value="Acepto" required /><span>Acepto que MAIER utilice estos datos únicamente para procesar mi solicitud, comunicarse conmigo y administrar mi participación académica. <span class="required-mark">*</span></span></label>
+      <p class="registration-note"><strong>Envío por correo:</strong> al continuar se abrirá su aplicación de correo con la solicitud preparada. Revísela y presione enviar; esta página no almacena sus datos.</p>
+      <button class="btn btn-primary" type="submit">Preparar solicitud por correo</button>
+      <p class="form-status" aria-live="polite"></p>
+    </form>
+  </div>
+</section>
+<section class="access-info">
+  <h2>Acceso protegido para estudiantes confirmados</h2>
+  <p>Después de revisar su solicitud, MAIER enviará las instrucciones correspondientes por el medio de contacto seleccionado.</p>
+  <ul><li><strong>Google Classroom:</strong> salón, tareas, avisos y materiales.</li><li><strong>Google Meet:</strong> enlace para clases en vivo.</li><li><strong>WhatsApp:</strong> comunicación oficial y recordatorios.</li><li><strong>Materiales:</strong> PDFs, guías y recursos digitales.</li></ul>
+  <p>No comparta códigos, enlaces de clase ni materiales privados con personas no inscritas.</p>
+</section>
+</main>
+<footer>
+  <p>© <span id="year"></span> Ministerio Apostólico Internacional Escuela Del Ruaj (MAIER). Todos los derechos reservados.</p>
+</footer>
+<script src="/script.js"></script><script>
+document.addEventListener("DOMContentLoaded",function(){
+ const form=document.querySelector("#registro-estudiantes"),programa=document.querySelector("#programa"),nivel=document.querySelector("#nivel");
+ const levels={"Escuela Profética":["Nivel 1","Nivel 2","Nivel 3"],"Raíces Hebreas":["Nivel 1","Nivel 2","Nivel 3"],"Universidad del Reino":["Asociado","Bachillerato","Maestría","Doctorado"],"Capellanía / Credenciales":["Capellanía","Credenciales ministeriales","Necesito orientación"],"Biblioteca / Materiales":["Biblioteca digital","Materiales de estudio"]};
+ programa.addEventListener("change",function(){const values=levels[programa.value]||[];nivel.innerHTML='<option value="">Seleccione</option>'+values.map(v=>'<option>'+v+'</option>').join('');nivel.disabled=!values.length});
+ const button=form.querySelector('button[type="submit"]'),status=form.querySelector(".form-status"),original=button.textContent;
+ function showError(message){let e=form.querySelector(".form-error");if(!e){e=document.createElement("p");e.className="form-error";e.setAttribute("role","alert");form.appendChild(e)}e.textContent=message}
+ form.addEventListener("submit",async function(event){
+  event.preventDefault();if(!form.reportValidity())return;button.disabled=true;button.textContent="Enviando…";status.textContent="Procesando su solicitud.";
+  const formData=new FormData(form),data=Object.fromEntries(formData.entries());
+  try{
+   const lines=[
+    "Solicitud de admisión MAIER",
+    "",
+    "Nombre completo: "+(data.nombre||""),
+    "Correo electrónico: "+(data.email||""),
+    "Teléfono / WhatsApp: "+(data.telefono||""),
+    "Ubicación: "+(data.ubicacion||""),
+    "Programa: "+(data.programa||""),
+    "Nivel o ruta: "+(data.nivel||""),
+    "Modalidad: "+(data.modalidad||""),
+    "Medio preferido: "+(data.contacto_preferido||""),
+    "Mensaje: "+(data.mensaje||""),
+    "",
+    "Consentimiento: "+(data.consentimiento||"")
+   ];
+   status.textContent="Se abrirá su correo para que revise y envíe la solicitud.";
+   window.location.href="mailto:rayhernandezoficial@gmail.com?subject="+encodeURIComponent("Solicitud de admisión MAIER")+"&body="+encodeURIComponent(lines.join("\n"));
+  }catch(e){console.error(e);status.textContent="";showError("No pudimos enviar su solicitud. Inténtelo nuevamente o comuníquese por WhatsApp.");button.disabled=false;button.textContent=original}
+ });
+});
+</script></body></html>
