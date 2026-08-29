@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+
+<html lang="es">
+<style>
+/* Ajustes de portada y anuncio Profeta Nivel 1 */
+.promo-profetica {
+  padding: 48px 24px 64px;
+  background: linear-gradient(135deg, #06162b, #000000);
+  text-align: center;
+  color: #ffffff;
+}
+
+.promo-profetica-contenido {
+  width: min(100%, 940px);
+  margin: 0 auto;
+  padding: 54px 48px;
+  box-sizing: border-box;
+  border: 2px solid #d4af37;
+  border-radius: 18px;
+  background: rgba(0, 0, 0, 0.9);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.45);
+}
+
+.promo-etiqueta {
+  display: inline-block;
+  margin: 0;
+  padding: 8px 18px;
+  border-radius: 25px;
+  background: #d4af37;
+  color: #06162b !important;
+  font-weight: 800;
+  letter-spacing: 0.03em;
+}
+
+.promo-profetica h2 {
+  margin: 20px 0 6px;
+  color: #ffffff;
+  font-size: clamp(34px, 5vw, 46px);
+  line-height: 1.1;
+}
+
+.promo-profetica h3 {
+  margin: 0 0 18px;
+  color: #e5c14b;
+  font-size: clamp(21px, 3vw, 26px);
+}
+
+.promo-profetica > .promo-profetica-contenido > p:not(.promo-etiqueta) {
+  max-width: 680px;
+  margin: 0 auto;
+  color: #ffffff;
+  font-size: 18px;
+  line-height: 1.65;
+}
+
+.promo-datos {
+  max-width: 680px;
+  margin: 28px auto 20px;
+  padding: 20px;
+  border: 1px solid rgba(212, 175, 55, 0.22);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.promo-datos p {
+  margin: 8px 0;
+  color: #ffffff;
+  font-size: 18px;
+  line-height: 1.45;
+}
+
+.promo-datos .promo-aviso {
+  margin-top: 14px;
+  color: #e4e8ef;
+  font-size: 15px;
+}
+
+.boton-profetico {
+  display: inline-block;
+  margin-top: 14px;
+  min-width: min(100%, 430px);
+  padding: 18px 36px;
+  box-sizing: border-box;
+  border-radius: 8px;
+  background: #d4af37;
+  color: #06162b;
+  font-size: 19px;
+  font-weight: 900;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  box-shadow: 0 8px 24px rgba(212, 175, 55, 0.28);
+  transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.boton-profetico:hover,
+.boton-profetico:focus-visible {
+  background: #f2cf5b;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(242, 207, 91, 0.4);
+}
+
+@media (min-width: 769px) {
+  .topbar {
+    gap: 24px;
+    padding-left: clamp(20px, 4vw, 64px);
+    padding-right: clamp(20px, 4vw, 64px);
+  }
+
+  .topbar .nav {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: clamp(10px, 1.25vw, 22px);
+  }
+
+  .topbar .nav a {
+    font-size: clamp(13px, 0.92vw, 16px);
+    white-space: nowrap;
+  }
+
+  .topbar .nav a[href="/registro/index.html"] {
+    padding: 10px 16px;
+    border-radius: 8px;
+    background: #d4af37;
+    color: #06162b;
+    font-weight: 900;
+  }
+}
+
+@media (max-width: 768px) {
+  body { overflow-x: hidden !important; }
+
+  header {
+    width: 100% !important;
+    padding: 12px 16px !important;
+    box-sizing: border-box !important;
+    background: #000 !important;
+  }
+
+  header img {
+    max-width: 85px !important;
+    height: auto !important;
+  }
+
+  nav,
+  .menu,
+  .mobile-menu,
+  .main-navigation {
+    margin: 0 !important;
+    padding: 12px 0 !important;
+    background: #000 !important;
+  }
+
+  nav a,
+  .menu a,
+  .mobile-menu a,
+  .main-navigation a {
+    display: block !important;
+    padding: 7px 0 !important;
+    color: #ffffff !important;
+    font-size: 20px !important;
+    line-height: 1.2 !important;
+    text-align: center !important;
+  }
+
+  .promo-profetica {
+    padding: 44px 16px;
+  }
+
+  .promo-profetica-contenido {
+    padding: 34px 20px;
+  }
+
+  .promo-profetica > .promo-profetica-contenido > p:not(.promo-etiqueta),
+  .promo-datos p {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .promo-profetica {
+    padding: 34px 12px;
+  }
+
+  .promo-profetica-contenido {
+    padding: 30px 16px;
+    border-radius: 14px;
+  }
+
+  .promo-etiqueta {
+    padding: 7px 14px;
+    font-size: 13px;
+  }
+
+  .boton-profetico {
+    width: 100%;
+    box-sizing: border-box;
+  }
+}
+
+/* Bienvenida principal MAIER */
+.bienvenida-maier {
+  position: relative;
+  overflow: hidden;
+  padding: clamp(64px, 8vw, 104px) 22px;
+  background:
+    radial-gradient(circle at 50% 0%, rgba(212,175,55,.18), transparent 38%),
+    linear-gradient(135deg, #07182e 0%, #020812 58%, #000 100%);
+  color: #fff;
+  text-align: center;
+  border-bottom: 1px solid rgba(212,175,55,.34);
+}
+.bienvenida-maier::after {
+  content: "";
+  position: absolute;
+  inset: 18px;
+  pointer-events: none;
+  border: 1px solid rgba(212,175,55,.18);
+  border-radius: 22px;
+}
+.bienvenida-contenido {
+  position: relative;
+  z-index: 1;
+  width: min(100%, 900px);
+  margin: 0 auto;
+}
+.bienvenida-sello {
+  width: 115px;
+  height: 115px;
+  margin-bottom: 20px;
+  object-fit: cover;
+  border: 2px solid rgba(212,175,55,.8);
+  border-radius: 50%;
+  clip-path: circle(50%);
+  background: #ffffff;
+  box-shadow: 0 8px 28px rgba(212,175,55,.3);
+}
+.bienvenida-etiqueta {
+  margin: 0 0 12px;
+  color: #e5c14b;
+  font-size: 14px;
+  font-weight: 900;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+}
+.bienvenida-maier h1 {
+  max-width: 820px;
+  margin: 0 auto 18px;
+  color: #fff;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(38px, 6vw, 66px);
+  line-height: 1.05;
+}
+.bienvenida-nombre {
+  max-width: 780px;
+  margin: 0 auto 20px;
+  color: #e5c14b;
+  font-size: clamp(18px, 2.5vw, 24px);
+  font-weight: 800;
+}
+.bienvenida-texto {
+  max-width: 780px;
+  margin: 0 auto;
+  color: #edf1f5;
+  font-size: clamp(17px, 2vw, 20px);
+  line-height: 1.7;
+}
+.bienvenida-lema {
+  margin: 22px auto 0;
+  color: #fff;
+  font-size: 17px;
+  font-weight: 800;
+}
+.bienvenida-acciones {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 30px;
+}
+.bienvenida-boton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 50px;
+  padding: 13px 24px;
+  border: 2px solid #d4af37;
+  border-radius: 9px;
+  background: #d4af37;
+  color: #06162b;
+  font-weight: 900;
+  text-decoration: none;
+  transition: transform .2s ease, background .2s ease, color .2s ease;
+}
+.bienvenida-boton:hover,
+.bienvenida-boton:focus-visible {
+  transform: translateY(-2px);
+  background: #f2cf5b;
+}
+.bienvenida-boton-secundario {
+  background: transparent;
+  color: #f2cf5b;
+}
+.bienvenida-boton-secundario:hover,
+.bienvenida-boton-secundario:focus-visible {
+  background: rgba(212,175,55,.12);
+  color: #fff;
+}
+@media (max-width: 560px) {
+  .bienvenida-maier { padding: 54px 16px; }
+  .bienvenida-maier::after { inset: 10px; }
+  .bienvenida-sello { width: 90px; height: 90px; }
+  .bienvenida-boton { width: 100%; }
+}
+
+</style>
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="icon" href="/assets/favicon.png" />
+<link rel="stylesheet" href="/styles.css" />
+<title>Escuela Del Ruaj | Portal Oficial MAIER</title>
+<meta name="description" content="Portal oficial del Ministerio Apostólico Internacional Escuela Del Ruaj, MAIER: Escuela Profética, Raíces Hebreas, Universidad del Reino, estudios bíblicos, registro de estudiantes, biblioteca digital y formación ministerial." />
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-LTMYRYYGVL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-LTMYRYYGVL');
+  </script>
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="/index.html">
+    <img src="/logoMAIER.png" alt="Logo oficial MAIER" />
+    <div>
+      <strong>Escuela Del Ruaj</strong>
+      <span>Ministerio Apostólico Internacional</span>
+    </div>
+  </a>
+
+<button class="menu-btn" aria-label="Abrir menú">☰</button>
+
+  <nav class="nav">
+    <a href="/index.html">Inicio</a>
+    <a href="/estudios-abiertos/index.html">Estudios Abiertos</a>
+    <a href="/programas/escuela-profetica.html">Escuela Profética</a>
+    <a href="/programas/raices-hebreas.html">Raíces Hebreas</a>
+    <a href="/programas/universidad-del-reino.html">Universidad</a>
+    <a href="/registro/index.html">Registro</a>
+    <a href="/credenciales.html">Credenciales</a>
+    <a href="/biblioteca/index.html">Biblioteca</a>
+    <a href="/revista/index.html">Revista</a>
+    <a href="#maier-kids">MAIER Kids</a>
+    <a href="#donaciones">Donaciones</a>
+  </nav>
+</header>
+
+<section class="bienvenida-maier" aria-labelledby="bienvenida-titulo">
+  <div class="bienvenida-contenido">
+    <img class="bienvenida-sello" src="/logoMAIER.png" alt="Logo oficial MAIER" />
+    <p class="bienvenida-etiqueta">Bienvenidos a MAIER</p>
+    <h1 id="bienvenida-titulo">Un lugar para crecer en la Palabra y ser guiados por el Espíritu</h1>
+    <p class="bienvenida-nombre">Ministerio Apostólico Internacional Escuela Del Ruaj</p>
+    <p class="bienvenida-texto">
+      Un espacio de formación bíblica, crecimiento espiritual y restauración de la fe de los primeros discípulos de Yeshúa, desde la cosmovisión hebrea y el contexto del Segundo Templo.
+    </p>
+    <p class="bienvenida-lema">Encendidos por la Palabra, guiados por el Espíritu.</p>
+    <div class="bienvenida-acciones">
+      <a class="bienvenida-boton" href="#nuestra-vision">Conoce nuestra visión</a>
+      <a class="bienvenida-boton bienvenida-boton-secundario" href="#programas-maier">Explora nuestros estudios</a>
+    </div>
+  </div>
+</section>
+
+<section id="maier-magazine" style="padding:clamp(54px,8vw,90px) 20px;background:radial-gradient(circle at 20% 10%,rgba(212,175,55,.18),transparent 38%),linear-gradient(135deg,#020812,#0a1e37);color:#fff;border-bottom:1px solid rgba(212,175,55,.35);">
+  <div style="width:min(1080px,100%);margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:clamp(30px,6vw,70px);align-items:center;">
+    <div style="text-align:center;">
+      <img src="/revista/maier-magazine-portada.jpg" alt="Portada de MAIER Magazine" style="width:min(100%,390px);aspect-ratio:2/3;object-fit:cover;border:1px solid rgba(212,175,55,.65);border-radius:5px;box-shadow:0 28px 60px rgba(0,0,0,.6);">
+    </div>
+    <div>
+      <p class="kicker">Nueva revista virtual</p>
+      <h2 style="margin:0 0 18px;color:#fff;font-family:Georgia,'Times New Roman',serif;font-size:clamp(36px,6vw,58px);line-height:1.02;">MAIER Magazine</h2>
+      <p style="color:#f2cf5b;font-size:19px;font-weight:800;letter-spacing:.06em;">PALABRA · IDENTIDAD · FORMACIÓN</p>
+      <p style="max-width:610px;color:#e6ebf1;font-size:18px;line-height:1.7;">Abre nuestra primera edición y disfruta una experiencia de lectura interactiva sobre Raíces Hebreas, el contexto del Segundo Templo y la dimensión profética.</p>
+      <a href="/revista/index.html" style="display:inline-flex;align-items:center;justify-content:center;margin-top:16px;padding:16px 26px;border-radius:8px;background:#d4af37;color:#06162b;font-weight:900;text-decoration:none;box-shadow:0 10px 28px rgba(212,175,55,.25);">ABRIR Y LEER LA REVISTA →</a>
+      <p style="margin-top:15px;color:#aeb9c7;font-size:14px;">Disponible para teléfono, tableta y computadora.</p>
+    </div>
+  </div>
+</section>
+
+<section id="maier-kids" aria-labelledby="maier-kids-titulo" style="padding:clamp(58px,8vw,92px) 20px;background:radial-gradient(circle at 15% 15%,rgba(95,197,255,.28),transparent 32%),radial-gradient(circle at 85% 20%,rgba(255,193,77,.28),transparent 30%),linear-gradient(135deg,#071b32,#0a2745);color:#fff;border-bottom:1px solid rgba(212,175,55,.35);overflow:hidden;">
+  <div style="width:min(1060px,100%);margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:clamp(30px,6vw,64px);align-items:center;">
+    <div>
+      <p style="margin:0 0 10px;color:#ffd76a;font-size:15px;font-weight:900;letter-spacing:.15em;text-transform:uppercase;">Una nueva generación</p>
+      <h2 id="maier-kids-titulo" style="margin:0 0 18px;color:#fff;font-family:Georgia,'Times New Roman',serif;font-size:clamp(40px,7vw,64px);line-height:1;">MAIER Kids</h2>
+      <p style="margin:0 0 16px;color:#d9f2ff;font-size:clamp(20px,3vw,27px);font-weight:800;">Libro mesiánico para colorear</p>
+      <p style="max-width:620px;margin:0;color:#edf5fb;font-size:18px;line-height:1.7;">Un recurso infantil para acercar a los niños a las historias bíblicas, las raíces hebreas y la fe en Yeshúa mediante dibujos, creatividad y aprendizaje.</p>
+      <div style="display:flex;flex-wrap:wrap;gap:12px;margin-top:26px;"><a href="/maier-kids/index.html" style="display:inline-flex;align-items:center;justify-content:center;padding:14px 22px;border-radius:10px;background:#ffd76a;color:#092544;font-weight:900;text-decoration:none;">🎨 COLOREAR EN LÍNEA</a><a href="/maier-kids/MAIER-Kids-Libro-Mesianico-Para-Colorear.pdf" download style="display:inline-flex;align-items:center;justify-content:center;padding:14px 22px;border:1px solid rgba(255,215,106,.8);border-radius:10px;background:rgba(255,215,106,.1);color:#ffe69a;font-weight:900;text-decoration:none;">📄 DESCARGAR PDF</a></div>
+    </div>
+    <div aria-hidden="true" style="min-height:350px;padding:34px;border:2px solid rgba(255,255,255,.62);border-radius:28px;background:linear-gradient(145deg,#fffdf6,#e8f7ff);color:#092544;box-shadow:0 24px 55px rgba(0,0,0,.38);transform:rotate(1.5deg);display:flex;flex-direction:column;justify-content:center;text-align:center;">
+      <div style="font-size:72px;line-height:1;">🕎</div>
+      <p style="margin:18px 0 6px;color:#0a3158;font-size:14px;font-weight:900;letter-spacing:.15em;text-transform:uppercase;">Mi primer libro</p>
+      <h3 style="margin:0;color:#092544;font-family:Georgia,'Times New Roman',serif;font-size:clamp(29px,5vw,43px);line-height:1.08;">Historias de la Biblia para colorear</h3>
+      <div style="display:flex;justify-content:center;gap:18px;margin-top:24px;font-size:34px;"><span>📖</span><span>🎨</span><span>🕊️</span></div>
+      <p style="margin:22px 0 0;color:#a06a00;font-weight:900;">MAIER KIDS</p>
+    </div>
+  </div>
+</section>
+
+<section class="promo-profetica">
+  <div class="promo-profetica-contenido">
+
+    <p class="promo-etiqueta">INSCRIPCIONES ABIERTAS</p>
+
+    <h2>Profeta Nivel 1</h2>
+
+    <h3>Llamado e Identidad del Profeta</h3>
+
+    <p>
+      Antes de que el profeta hable a una generación,
+      Dios primero trata con su identidad, su boca y su corazón.
+    </p>
+
+    <div class="promo-datos">
+      <p><strong>Duración:</strong> 7 clases</p>
+      <p><strong>Inicio:</strong> Septiembre de 2026</p>
+      <p><strong>Día:</strong> Viernes</p>
+      <p><strong>Horario:</strong> 7:00 p. m.</p>
+      <p><strong>Modalidad:</strong> Google Meet</p>
+      <p><strong>Donación:</strong> $50</p>
+      <p><strong>Incluye:</strong> Material de estudio y certificado</p>
+      <p class="promo-aviso"><small>Horario sujeto a cambios con aviso previo.</small></p>
+    </div>
+
+    <a
+
+      href="/registro/index.html"
+      class="boton-profetico"
+      
+    >
+      INSCRÍBETE AHORA — CUPOS DISPONIBLES
+    </a>
+    <a
+      href="https://classroom.google.com/c/ODQxMDg2NDc1MDgw"
+      class="boton-profetico"
+      target="_blank"
+      rel="noopener noreferrer"
+      style="margin-left:10px;background:#ffffff;color:#06162b;"
+    >
+      ENTRAR AL SALÓN — ESTUDIANTES AUTORIZADOS
+    </a>
+  </div>
+</section>
+<!-- La información detallada de Profeta Nivel 1 vive en su página de programa. -->
+<section class="section" id="proximos-eventos">
+  <div class="section-title">
+    <p class="kicker">Agenda MAIER</p>
+    <h2>Próximos eventos</h2>
+    <p>Congrégate, estudia y participa en nuestras próximas actividades.</p>
+  </div>
+  <div class="program-grid">
+    <article class="program-card">
+      <p class="kicker">Martes · 7:00 p. m.</p>
+      <h3>Estudio bíblico</h3>
+      <p>Formación congregacional en vivo por Google Meet. El acceso se envía a estudiantes y participantes confirmados.</p>
+      <a class="btn btn-primary" href="/registro/index.html">Solicitar acceso</a>
+    </article>
+    <article class="program-card">
+      <p class="kicker">Jueves · 7:30 p. m.</p>
+      <h3>Servicio congregacional</h3>
+      <p>Adoración, enseñanza y ministración en 1907 New Road, Northfield, NJ 08225.</p>
+      <a class="btn btn-primary" href="https://maps.google.com/?q=1907+New+Road+Northfield+NJ+08225" target="_blank" rel="noopener noreferrer">Cómo llegar</a>
+    </article>
+    <article class="program-card">
+      <p class="kicker">Sábado 5 de septiembre · 6:00 p. m.</p>
+      <h3>Servicio de Niños</h3>
+      <p>Presentación al Eterno de los nuevos niños de MAIER, con el invitado especial Payaso Bendición.</p>
+      <a class="btn btn-primary" href="https://wa.me/16099109514?text=Saludos,%20deseo%20información%20sobre%20el%20Servicio%20de%20Niños%20MAIER" target="_blank" rel="noopener noreferrer">Información por WhatsApp</a>
+    </article>
+  </div>
+</section>
+
+<section id="clase-destacada" style="padding:50px 20px; text-align:center; background:linear-gradient(135deg, #061629, #0b1f3a); color:white;">
+  <h2 style="font-size:42px; margin-bottom:18px; color:#f4c542;">
+    Clase Destacada
+  </h2>
+
+  <p style="font-size:20px; max-width:950px; margin:0 auto 28px auto; line-height:1.6; color:#ffffff;">
+    Mira esta enseñanza de Escuela Del Ruaj: <strong>Clase profeta nivel 1 fundamental</strong>.
+    Regístrate para recibir acceso a nuestras clases, materiales y grupos de estudio.
+  </p>
+
+  <div style="max-width:380px; margin:0 auto 28px auto; aspect-ratio:9/16;">
+    <iframe 
+      src="https://www.youtube.com/embed/7LcPzrxrR8k?start=63"
+      title="Clase profeta nivel 1 fundamental"
+      style="width:100%; height:100%; border:0; border-radius:12px;"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      allowfullscreen>
+    </iframe>
+  </div>
+
+  <a href="/registro/index.html" style="display:inline-block; padding:14px 28px; background:#f4c542; color:#061629; text-decoration:none; border-radius:8px; margin:6px; font-weight:bold;">
+    Registrarme para Estudiar
+  </a>
+
+  <a href="https://www.youtube.com/watch?v=7LcPzrxrR8k&t=63s" target="_blank" style="display:inline-block; padding:14px 28px; background:#ffffff; color:#0b1f3a; text-decoration:none; border-radius:8px; margin:6px; font-weight:bold;">
+    Ver en YouTube
+  </a>
+</section>
+
+<!-- MÚSICA ESCUELA DEL RUAJ -->
+<section id="musica-maier" style="padding:56px 20px;background:radial-gradient(circle at 50% 0%,rgba(212,175,55,.18),transparent 42%),linear-gradient(135deg,#061629,#020812);color:#fff;text-align:center;border-top:1px solid rgba(212,175,55,.35);border-bottom:1px solid rgba(212,175,55,.35);">
+  <div style="max-width:980px;margin:0 auto;">
+    <p class="kicker">Música oficial</p>
+    <h2 style="margin:0 0 12px;color:#fff;font-size:clamp(32px,5vw,46px);">Música de Escuela Del Ruaj</h2>
+    <p style="margin:0 auto 28px;color:#e8edf3;font-size:18px;line-height:1.65;">Escucha nuestra colección de alabanzas oficiales mientras visitas MAIER.</p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:18px;text-align:left;">
+      <article style="padding:22px;border:1px solid rgba(212,175,55,.55);border-radius:16px;background:rgba(0,0,0,.38);">
+        <h3 style="margin:0 0 15px;color:#fff;font-size:21px;">Escuela Del Ruaj</h3>
+        <audio controls preload="metadata" style="width:100%;"><source src="/Escuela%20Del%20ruaj.mp3" type="audio/mpeg">Tu navegador no admite audio.</audio>
+      </article>
+      <article style="padding:22px;border:1px solid rgba(212,175,55,.55);border-radius:16px;background:rgba(0,0,0,.38);">
+        <h3 style="margin:0 0 15px;color:#fff;font-size:21px;">Adiestra mis manos</h3>
+        <audio controls preload="metadata" style="width:100%;"><source src="/ADIESTRA%20MISMANOS%20congregacion.mp3" type="audio/mpeg">Tu navegador no admite audio.</audio>
+      </article>
+      <article style="padding:22px;border:1px solid rgba(212,175,55,.55);border-radius:16px;background:rgba(0,0,0,.38);">
+        <h3 style="margin:0 0 15px;color:#fff;font-size:21px;">De las tinieblas a la luz</h3>
+        <audio controls preload="metadata" style="width:100%;"><source src="/FROM%20DARKNESS%20TO%20LIGHT%E2%80%9D%201.mp3" type="audio/mpeg">Tu navegador no admite audio.</audio>
+      </article>
+      <article style="padding:22px;border:1px solid rgba(212,175,55,.55);border-radius:16px;background:rgba(0,0,0,.38);">
+        <h3 style="margin:0 0 15px;color:#fff;font-size:21px;">Restaura mi altar</h3>
+        <audio controls preload="metadata" style="width:100%;"><source src="/RESTAURA%20MI%20ALTAR%201.mp3" type="audio/mpeg">Tu navegador no admite audio.</audio>
+      </article>
+      <article style="padding:22px;border:1px solid rgba(212,175,55,.55);border-radius:16px;background:rgba(0,0,0,.38);">
+        <h3 style="margin:0 0 15px;color:#fff;font-size:21px;">Sendas antiguas</h3>
+        <audio controls preload="metadata" style="width:100%;"><source src="/SENDAS%20ANTIGUAS%20el%20llamado%20a%20volver%201.mp3" type="audio/mpeg">Tu navegador no admite audio.</audio>
+      </article>
+      <article style="padding:22px;border:1px solid rgba(212,175,55,.55);border-radius:16px;background:rgba(0,0,0,.38);">
+        <h3 style="margin:0 0 15px;color:#fff;font-size:21px;">El desierto no es tu final</h3>
+        <audio controls preload="metadata" style="width:100%;"><source src="/el%20desierto%20no%20es%20tu%20final1.mp3" type="audio/mpeg">Tu navegador no admite audio.</audio>
+      </article>
+    </div>
+  </div>
+</section>
+
+<main>
+
+  <section class="section live-section" id="en-vivo">
+    <div class="section-title">
+      <p class="kicker">Canales oficiales</p>
+      <h2>TV MAIER</h2>
+      <p>
+        Transmisiones en vivo, estudios bíblicos, servicios y programas
+        de formación desde nuestros canales oficiales.
+      </p>
+    </div>
+
+    <div class="live-grid">
+      <article class="live-card live-card-youtube">
+        <div class="live-platform-icon" aria-hidden="true">▶</div>
+        <div class="live-card-content">
+          <p class="live-status">CANAL OFICIAL</p>
+          <h3>YouTube</h3>
+          <p>Clases, estudios y transmisiones del Ministerio Apostólico Internacional Escuela Del Ruaj.</p>
+          <a
+            class="live-button"
+            href="https://www.youtube.com/@EscuelaDelRuajOficial/live"
+            target="_blank"
+            rel="noopener noreferrer">
+            VER CANAL DE YOUTUBE
+          </a>
+        </div>
+      </article>
+
+      <article class="live-card live-card-facebook">
+        <div class="live-platform-icon" aria-hidden="true">f</div>
+        <div class="live-card-content">
+          <p class="live-status">PÁGINA OFICIAL</p>
+          <h3>Facebook</h3>
+          <p>Publicaciones, enseñanzas, actividades y transmisiones oficiales de MAIER.</p>
+          <a
+            class="live-button facebook-button"
+            href="https://www.facebook.com/ministerioapostolicointernacionalescueladelruaj/"
+            target="_blank"
+            rel="noopener noreferrer">
+            VISITAR FACEBOOK OFICIAL
+          </a>
+        </div>
+      </article>
+    </div>
+
+    <p class="live-note">Cuando haya una transmisión activa, podrás verla directamente desde nuestros canales oficiales.</p>
+  </section>
+<section class="facebook-section">
+
+  <div class="section-title">
+    <p class="kicker">Red social oficial</p>
+    <h2>MAIER en Facebook</h2>
+    <p>
+      Mira nuestras publicaciones, estudios bíblicos,
+      actividades y transmisiones oficiales.
+    </p>
+  </div>
+
+  <div class="facebook-responsive">
+    <iframe
+      src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fministerioapostolicointernacionalescueladelruaj%2F&tabs=timeline&width=500&height=650&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true"
+      width="500"
+      height="650"
+      style="border:none; overflow:hidden;"
+      scrolling="no"
+      frameborder="0"
+      allowfullscreen="true"
+      allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share">
+    </iframe>
+  </div>
+
+  <div class="facebook-actions">
+    <a
+      class="live-button facebook-button"
+      href="https://www.facebook.com/ministerioapostolicointernacionalescueladelruaj/"
+      target="_blank"
+      rel="noopener">
+      Visitar Facebook Oficial
+    </a>
+  </div>
+
+</section>
+  <section id="programas-maier" class="section">
+    <div class="section-title">
+      <p class="kicker">Formación ministerial</p>
+      <h2>Programas académicos y espirituales</h2>
+      <p>
+        MAIER ofrece una ruta de formación organizada para estudiantes, servidores, líderes y ministros que desean crecer en Palabra, identidad, Reino y propósito.
+      </p>
+    </div>
+
+<div class="program-grid">
+  <article class="program-card">
+    <div class="icon">🔥</div>
+    <h3>Escuela Profética</h3>
+    <p>
+      Formación en llamado, identidad profética, madurez espiritual, discernimiento, consejo del Eterno, carácter del profeta y envío ministerial.
+    </p>
+    <a href="/programas/escuela-profetica.html">Ver programa</a>
+  </article>
+
+  <article class="program-card">
+    <div class="icon">📜</div>
+    <h3>Raíces Hebreas</h3>
+    <p>
+      Estudios de Torá, fiestas bíblicas, contexto hebreo y arameo, método PaRDeS, judaísmo del Segundo Templo y lectura mesiánica de las Escrituras.
+    </p>
+    <a href="/programas/raices-hebreas.html">Ver programa</a>
+  </article>
+
+  <article class="program-card">
+    <div class="icon">👑</div>
+    <h3>Universidad del Reino</h3>
+    <p>
+      Formación teológica y ministerial interna: asociado, bachillerato, maestría, doctorado ministerial, diplomados y estudios avanzados.
+    </p>
+    <a href="/programas/universidad-del-reino.html">Ver programa</a>
+  </article>
+</div>
+
+  </section>
+
+  <section id="nuestra-vision" class="section">
+    <div class="section-title">
+      <p class="kicker">Nuestra visión</p>
+      <h2>Formar una generación alineada con el Reino</h2>
+      <p>
+        Escuela Del Ruaj existe para restaurar fundamentos, despertar identidad, equipar a los santos y preparar obreros maduros para servir al Eterno con obediencia, sabiduría, carácter y fuego espiritual.
+      </p>
+    </div>
+
+<div class="program-grid">
+  <article class="program-card">
+    <div class="icon">🕎</div>
+    <h3>Fundamento bíblico</h3>
+    <p>
+      Enseñanza centrada en las Escrituras, la Torá, los Profetas, los Escritos y la revelación mesiánica de Yeshúa dentro de su contexto hebreo del siglo I.
+    </p>
+  </article>
+
+  <article class="program-card">
+    <div class="icon">🌿</div>
+    <h3>Restauración del alma</h3>
+    <p>
+      Un camino de Teshuvá, Emuná, transformación interior, sanidad, rectificación y alineamiento con la voluntad del Eterno.
+    </p>
+  </article>
+
+  <article class="program-card">
+    <div class="icon">🛡️</div>
+    <h3>Madurez ministerial</h3>
+    <p>
+      Capacitación sobria para servir con autoridad espiritual, humildad, responsabilidad, discernimiento y fidelidad al llamado.
+    </p>
+  </article>
+</div>
+
+  </section>
+
+  <section id="donaciones" class="section donation">
+    <div>
+      <p class="kicker">Siembra ministerial</p>
+      <h2>Donaciones</h2>
+      <p>
+        Su apoyo sostiene clases, materiales, transmisiones, recursos digitales, expansión ministerial y formación de estudiantes.
+      </p>
+    </div>
+
+<div class="donation-methods">
+  <a class="cashapp" href="https://cash.app/$rayoficial" target="_blank" rel="noopener noreferrer" aria-label="Donar por Cash App a rayoficial">
+    <span>Cash App</span>
+    <strong>$rayoficial</strong>
+  </a>
+  <a class="paypal" href="https://paypal.me/RaynaldoHernandez" target="_blank" rel="noopener noreferrer" aria-label="Donar por PayPal a Raynaldo Hernandez">
+    <span>PayPal</span>
+    <strong>@RaynaldoHernandez</strong>
+  </a>
+</div>
+
+  </section>
+
+
+  <section id="testimonios" class="section" style="background: radial-gradient(circle at 50% 0%, rgba(212,175,55,.15), transparent 42%), #071426; border-top:1px solid rgba(212,175,55,.28);">
+    <div style="max-width:780px; margin:0 auto; text-align:center;">
+      <p class="kicker">Tu experiencia importa</p>
+      <h2>Comparte tu testimonio</h2>
+      <p style="max-width:650px; margin:0 auto 28px; line-height:1.65;">
+        ¿De qué manera fue de bendición para ti visitar esta página? Tu experiencia puede animar y fortalecer a otras personas.
+      </p>
+      <form id="testimonios-form" style="padding:clamp(24px,5vw,42px); border:1px solid rgba(212,175,55,.48); border-radius:18px; background:rgba(0,0,0,.34); text-align:left; box-shadow:0 16px 38px rgba(0,0,0,.22);">
+        <label for="testimonio-nombre" style="display:block; margin-bottom:8px; color:#f2cf5b; font-weight:800;">Tu nombre <span style="font-weight:400;">(opcional)</span></label>
+        <input id="testimonio-nombre" name="nombre" type="text" autocomplete="name" maxlength="100" style="width:100%; box-sizing:border-box; margin-bottom:20px; padding:14px; border:1px solid rgba(212,175,55,.55); border-radius:8px; background:#fff; color:#061629; font:inherit;">
+        <label for="testimonio-mensaje" style="display:block; margin-bottom:8px; color:#f2cf5b; font-weight:800;">Cuéntanos aquí</label>
+        <textarea id="testimonio-mensaje" name="testimonio" rows="6" required maxlength="2000" placeholder="Escribe tu comentario o testimonio..." style="width:100%; box-sizing:border-box; padding:14px; border:1px solid rgba(212,175,55,.55); border-radius:8px; background:#fff; color:#061629; font:inherit; line-height:1.5; resize:vertical;"></textarea>
+        <p style="margin:14px 0 8px; color:#d7dee6; font-size:14px; line-height:1.5;"><strong>Envío por correo:</strong> al continuar se abrirá tu aplicación de correo con el mensaje preparado. Revísalo y presiona enviar.</p>
+        <p style="margin:0 0 20px; color:#d7dee6; font-size:14px; line-height:1.5;">Ningún testimonio se publica automáticamente; el sitio no lo almacena mientras se implementa una vía de moderación.</p>
+        <button type="submit" style="width:100%; padding:15px 22px; border:0; border-radius:8px; background:#d4af37; color:#061629; font:inherit; font-weight:900; cursor:pointer;">PREPARAR MENSAJE POR CORREO</button>
+        <p id="testimonio-status" aria-live="polite" style="margin:14px 0 0; color:#f2cf5b; font-weight:700;"></p>
+      </form>
+      <script>
+        document.addEventListener("DOMContentLoaded", function () {
+          const form = document.getElementById("testimonios-form");
+          const status = document.getElementById("testimonio-status");
+          if (!form || !status) return;
+          form.addEventListener("submit", function (event) {
+            event.preventDefault();
+            if (!form.reportValidity()) return;
+            const data = Object.fromEntries(new FormData(form).entries());
+            const body = [
+              "Testimonio para revisión MAIER",
+              "",
+              "Nombre: " + (data.nombre || "Anónimo"),
+              "",
+              "Testimonio:",
+              data.testimonio || "",
+              "",
+              "Nota: este mensaje fue preparado por la web; su publicación requiere revisión."
+            ].join("\n");
+            status.textContent = "Se abrirá tu correo para que revises y envíes el mensaje.";
+            window.location.href = "mailto:rayhernandezoficial@gmail.com?subject=" + encodeURIComponent("Testimonio para revisión MAIER") + "&body=" + encodeURIComponent(body);
+          });
+        });
+      </script>
+    </div>
+  </section>
+
+  <section class="section contact">
+    <img src="/logoMAIER.png" alt="Logo oficial MAIER" />
+
+<p class="kicker">Contacto oficial</p>
+
+<h2>Ministerio Apostólico Internacional Escuela Del Ruaj</h2>
+
+<p>
+  Sede New Jersey, USA · Martes 7:00 PM estudios bíblicos · Jueves 7:30 PM servicio congregacional
+</p>
+
+<p>
+  1907 New Road, Northfield, NJ 08225
+</p>
+
+<a href="mailto:rayhernandezoficial@gmail.com" target="_blank" rel="noopener">rayhernandezoficial@gmail.com</a>
+
+  </section>
+
+</main>
+
+<footer>
+  <p>© <span id="year"></span> Ministerio Apostólico Internacional Escuela Del Ruaj (MAIER). Todos los derechos reservados.</p>
+</footer>
+
+<script src="/script.js"></script>
+
+</body>
+</html>

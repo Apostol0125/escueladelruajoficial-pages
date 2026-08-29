@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Verificación oficial de credenciales activas del Ministerio Apostólico Internacional Escuela Del Ruaj (MAIER)." />
+  <title>Credenciales Oficiales MAIER</title>
+  <style>
+    :root {
+      --navy: #071a36;
+      --navy-2: #0d2a52;
+      --gold: #c9a348;
+      --gold-light: #e5cc84;
+      --white: #ffffff;
+      --ink: #172033;
+      --muted: #64748b;
+      --surface: #f7f9fc;
+      --success: #177245;
+      --danger: #9f1d2c;
+      --shadow: 0 18px 50px rgba(7, 26, 54, .15);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at top right, rgba(201, 163, 72, .18), transparent 32%),
+        linear-gradient(180deg, #eef3fa 0%, #ffffff 100%);
+    }
+
+    .topbar {
+      background: linear-gradient(135deg, var(--navy), var(--navy-2));
+      color: var(--white);
+      border-bottom: 4px solid var(--gold);
+    }
+
+    .topbar-inner {
+      max-width: 1120px;
+      margin: auto;
+      padding: 20px 24px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .logo {
+      width: 66px;
+      height: 66px;
+      object-fit: contain;
+      border-radius: 50%;
+      background: rgba(255,255,255,.95);
+      padding: 4px;
+      border: 2px solid var(--gold);
+    }
+
+    .brand h1 {
+      margin: 0;
+      font-size: clamp(1.15rem, 2vw, 1.65rem);
+      letter-spacing: .04em;
+      text-transform: uppercase;
+    }
+
+    .brand p {
+      margin: 5px 0 0;
+      color: var(--gold-light);
+      font-size: .92rem;
+    }
+
+    main {
+      max-width: 1120px;
+      margin: auto;
+      padding: 42px 24px 64px;
+    }
+
+    .hero {
+      text-align: center;
+      margin-bottom: 28px;
+    }
+
+    .hero .eyebrow {
+      color: var(--gold);
+      font-size: .82rem;
+      font-weight: 800;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+
+    .hero h2 {
+      margin: 10px 0 12px;
+      color: var(--navy);
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      line-height: 1.03;
+    }
+
+    .hero p {
+      max-width: 760px;
+      margin: auto;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+
+    .search-panel {
+      max-width: 760px;
+      margin: 28px auto 34px;
+      padding: 24px;
+      background: rgba(255,255,255,.92);
+      border: 1px solid rgba(7,26,54,.09);
+      border-radius: 20px;
+      box-shadow: var(--shadow);
+    }
+
+    .search-panel label {
+      display: block;
+      margin-bottom: 9px;
+      color: var(--navy);
+      font-weight: 800;
+    }
+
+    .search-row {
+      display: flex;
+      gap: 10px;
+    }
+
+    .search-row input {
+      flex: 1;
+      min-width: 0;
+      padding: 15px 16px;
+      border: 2px solid #dce4ef;
+      border-radius: 12px;
+      font-size: 1rem;
+      outline: none;
+    }
+
+    .search-row input:focus {
+      border-color: var(--gold);
+      box-shadow: 0 0 0 4px rgba(201,163,72,.15);
+    }
+
+    button, .home-link {
+      border: 0;
+      border-radius: 12px;
+      padding: 14px 20px;
+      font-weight: 800;
+      cursor: pointer;
+      text-decoration: none;
+      transition: transform .15s ease, opacity .15s ease;
+    }
+
+    button:hover, .home-link:hover { transform: translateY(-1px); }
+
+    .search-btn {
+      color: var(--navy);
+      background: linear-gradient(135deg, var(--gold-light), var(--gold));
+    }
+
+    .clear-btn {
+      margin-top: 10px;
+      color: var(--navy);
+      background: #edf2f7;
+    }
+
+    #message {
+      min-height: 24px;
+      margin: 14px 0 0;
+      font-weight: 700;
+    }
+
+    .section-title {
+      margin: 0 0 18px;
+      color: var(--navy);
+      font-size: 1.35rem;
+    }
+
+    .credentials-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .credential-card {
+      position: relative;
+      min-height: 365px;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      background: var(--white);
+      border: 1px solid rgba(7,26,54,.1);
+      border-radius: 20px;
+      box-shadow: 0 14px 35px rgba(7,26,54,.09);
+    }
+
+    .credential-card::before {
+      content: "";
+      position: absolute;
+      inset: 0 0 auto;
+      height: 6px;
+      background: linear-gradient(90deg, var(--gold), var(--gold-light), var(--gold));
+    }
+
+    .card-head {
+      padding: 24px 22px 18px;
+      background: linear-gradient(145deg, var(--navy), var(--navy-2));
+      color: var(--white);
+    }
+
+    .card-head .id-label {
+      color: var(--gold-light);
+      font-size: .76rem;
+      font-weight: 800;
+      letter-spacing: .13em;
+      text-transform: uppercase;
+    }
+
+    .card-head .id-number {
+      margin-top: 4px;
+      font-size: 1.6rem;
+      font-weight: 900;
+    }
+
+    .card-body {
+      padding: 22px;
+      display: flex;
+      flex: 1;
+      flex-direction: column;
+    }
+
+    .card-body h3 {
+      margin: 0 0 8px;
+      color: var(--navy);
+      font-size: 1.3rem;
+    }
+
+    .role {
+      min-height: 48px;
+      margin: 0 0 16px;
+      color: #334155;
+      font-weight: 700;
+      line-height: 1.45;
+    }
+
+    .meta {
+      display: grid;
+      gap: 9px;
+      margin-top: auto;
+      padding-top: 16px;
+      padding-top: 16px;
+      border-top: 1px solid #e8edf4;
+      font-size: .92rem;
+    }
+
+    .meta strong { color: var(--navy); }
+
+    .status {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      width: fit-content;
+      padding: 7px 11px;
+      border-radius: 999px;
+      color: var(--success);
+      background: #e7f7ef;
+      font-size: .8rem;
+      font-weight: 900;
+      letter-spacing: .05em;
+    }
+
+    .status::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: currentColor;
+    }
+
+    .notice {
+      margin-top: 34px;
+      padding: 18px 20px;
+      border-left: 4px solid var(--gold);
+      border-radius: 10px;
+      color: #475569;
+      background: #fffaf0;
+      line-height: 1.55;
+      font-size: .93rem;
+    }
+
+    .actions {
+      margin-top: 26px;
+      text-align: center;
+    }
+
+    .home-link {
+      display: inline-block;
+      color: var(--white);
+      background: var(--navy);
+    }
+
+    footer {
+      padding: 24px;
+      text-align: center;
+      color: #cbd5e1;
+      background: var(--navy);
+      font-size: .88rem;
+    }
+
+    .hidden { display: none !important; }
+
+    .verification-result {
+      max-width: 620px;
+      margin: 0 auto;
+    }
+
+    .verification-result .credential-card {
+      border: 2px solid rgba(23,114,69,.35);
+      box-shadow: 0 18px 48px rgba(7,26,54,.14);
+    }
+
+    .verified-banner {
+      padding: 13px 18px;
+      color: #0f5f3a;
+      background: #e7f7ef;
+      border: 1px solid #b9e4cc;
+      border-radius: 12px;
+      font-weight: 800;
+      text-align: center;
+      margin-bottom: 16px;
+    }
+
+    @media (max-width: 900px) {
+      .credentials-grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    @media (max-width: 650px) {
+      .topbar-inner { align-items: flex-start; }
+      .logo { width: 54px; height: 54px; }
+      main { padding: 30px 16px 48px; }
+      .search-panel { padding: 18px; }
+      .search-row { flex-direction: column; }
+      .search-row .search-btn, .clear-btn { width: 100%; }
+      .credentials-grid { grid-template-columns: 1fr; }
+      .credential-card { min-height: 0; }
+      .role { min-height: auto; }
+    }
+  </style>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-LTMYRYYGVL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-LTMYRYYGVL');
+  </script>
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <img class="logo" src="/logo-escuela.png" alt="Logo oficial MAIER"
+           onerror="this.style.display='none'" />
+      <div class="brand">
+        <h1>Ministerio Apostólico Internacional Escuela Del Ruaj</h1>
+        <p>MAIER · Sede New Jersey, Estados Unidos</p>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="eyebrow">Registro institucional</div>
+      <h2>Verificación de Credenciales</h2>
+      <p>
+        Consulte una credencial ministerial activa escribiendo el nombre completo
+        o el número de identificación MAIER.
+      </p>
+    </section>
+
+    <section class="search-panel" aria-label="Buscador de credenciales">
+      <label for="credentialSearch">Nombre o ID de MAIER</label>
+      <div class="search-row">
+        <input id="credentialSearch" type="search" placeholder="Ejemplo: 2502 o Mónica Carrion" autocomplete="off" />
+        <button class="search-btn" type="button" onclick="searchCredentials()">Verificar</button>
+      </div>
+      <button class="clear-btn" type="button" onclick="clearSearch()">Limpiar búsqueda</button>
+      <p id="message" aria-live="polite"></p>
+    </section>
+
+    <section id="resultsSection" class="hidden" aria-label="Resultado de verificación">
+      <div id="verifiedBanner" class="verified-banner hidden">
+        ✓ Credencial verificada en el registro oficial de MAIER
+      </div>
+      <h2 class="section-title">Resultado de la verificación</h2>
+      <div id="credentialsGrid" class="credentials-grid verification-result"></div>
+    </section>
+
+    <div class="notice">
+      <strong>Aviso institucional:</strong> estas credenciales certifican funciones
+      ministeriales internas de MAIER. No representan autoridad policial, gubernamental,
+      médica, legal ni militar.
+    </div>
+
+    <div class="actions">
+      <a class="home-link" href="/">Regresar al portal principal</a>
+    </div>
+  </main>
+
+  <footer>
+    © 2026 Ministerio Apostólico Internacional Escuela Del Ruaj (MAIER).
+    Todos los derechos reservados.
+  </footer>
+
+  <script>
+    const credentials = [
+      {
+        id: "2624",
+        name: "Elizabeth Gonzales",
+        role: "Ministro Especialista en Maestría Profética",
+        area: "Estados Unidos",
+        status: "ACTIVA"
+      },
+      {
+        id: "2618",
+        name: "Zoraida Marcial",
+        role: "Ministro Especialista en Maestría Profética",
+        area: "Estados Unidos",
+        status: "ACTIVA"
+      },
+      {
+        id: "2616",
+        name: "Adelaida Lopez",
+        role: "Ministro Especialista en Maestría Profética",
+        area: "Estados Unidos",
+        status: "ACTIVA"
+      },
+      {
+        id: "2621",
+        name: "Yesenia Monell Perez",
+        role: "Ministro Especialista en Maestría Profética",
+        area: "Estados Unidos",
+        status: "ACTIVA"
+      },
+      {
+        id: "2609",
+        name: "Annie Mariamarrero",
+        role: "Ministro Especialista en Maestría Profética",
+        area: "Estados Unidos",
+        status: "ACTIVA"
+      },
+      {
+        id: "2608",
+        name: "Mayeling Perez Diaz",
+        role: "Ministro Especialista en Maestría Profética",
+        area: "Estados Unidos",
+        status: "ACTIVA"
+      },
+      {
+        id: "2623",
+        name: "Mayeling Benitez",
+        role: "Ministro Especialista en Maestría Profética",
+        area: "Estados Unidos",
+        status: "ACTIVA"
+      },
+      {
+        id: "2619",
+        name: "Juanita Lopez",
+        role: "Ministro Especialista en Maestría Profética",
+        area: "Estados Unidos",
+        status: "ACTIVA"
+      },
+      {
+        id: "2613",
+        name: "Jeannette Marcial Soto",
+        role: "Ministro Especialista en Maestría Profética",
+        area: "Estados Unidos",
+        status: "ACTIVA"
+      },
+      {
+        id: "2615",
+        name: "Christian Matias",
+        role: "Ministro Especialista en Maestría Profética",
+        area: "Estados Unidos",
+        status: "ACTIVA"
+      },
+      {
+        id: "2614",
+        name: "Suheim Matias",
+        role: "Ministro Especialista en Maestría Profética",
+        area: "Estados Unidos",
+        status: "ACTIVA"
+      },
+      {
+        id: "2610",
+        name: "Yesenia Ramos Ramos",
+        role: "Ministro Especialista en Maestría Profética",
+        area: "Estados Unidos",
+        status: "ACTIVA"
+      },
+      {
+        id: "2505",
+        name: "Francisco Gimenes",
+        role: "Ministro Especialista en Maestría Profética",
+        area: "Estados Unidos",
+        status: "ACTIVA"
+      },
+      {
+        id: "2504",
+        name: "Madelin Perez",
+        role: "Ministro Especialista en Maestría Profética",
+        area: "Estados Unidos",
+        status: "ACTIVA"
+      },
+      {
+        id: "2502",
+        name: "Monica Carrion",
+        role: "Ministro Especialista en Maestría Profética",
+        area: "Estados Unidos",
+        issue: "7 de junio de 2026",
+        expiration: "7 de junio de 2027",
+        status: "ACTIVA"
+      },
+      {
+        id: "2607",
+        name: "Jaime Badillo",
+        role: "Ministro Especialista en Maestría Profética",
+        area: "Estados Unidos",
+        status: "ACTIVA"
+      },
+      {
+        id: "2606",
+        name: "Tania Badillo",
+        role: "Ministro Especialista en Maestría Profética",
+        area: "Estados Unidos",
+        status: "ACTIVA"
+      },
+      {
+        id: "2612",
+        name: "Yetsenia Molina",
+        role: "Ministro Especialista en Maestría Profética",
+        area: "Estados Unidos",
+        status: "ACTIVA"
+      },
+      {
+        id: "2611",
+        name: "Edgar Gamaliel Cuevas Ortiz",
+        role: "Ministro Especialista en Maestría Profética",
+        area: "Estados Unidos",
+        status: "ACTIVA"
+      },
+      {
+        id: "2617",
+        name: "Esther Maldonado",
+        role: "Ministro Especialista en Maestría Profética",
+        area: "Estados Unidos",
+        status: "ACTIVA"
+      },
+      {
+        id: "2622",
+        name: "Florence Torrez",
+        role: "Ministro Especialista en Maestría Profética",
+        area: "Estados Unidos",
+        status: "ACTIVA"
+      },
+      {
+        id: "2620",
+        name: "Zuleika Diaz Santiago",
+        role: "Ministro Especialista en Maestría Profética",
+        area: "Estados Unidos",
+        status: "ACTIVA"
+      },
+      {
+        id: "0125",
+        name: "Raynaldo Hernandez",
+        role: "Presidente Fundador / Apóstol General",
+        area: "Sede New Jersey, Estados Unidos",
+        issue: "7 de julio de 2026",
+        expiration: "7 de julio de 2028",
+        status: "ACTIVA"
+      },
+      {
+        id: "0225",
+        name: "Mónica Carrion",
+        role: "Vicepresidenta / Fundadora",
+        area: "Sede New Jersey, Estados Unidos",
+        status: "ACTIVA"
+      },
+      {
+        id: "0325",
+        name: "Reynaldo Hernandez",
+        role: "Director Internacional — Área de Puerto Rico",
+        area: "Puerto Rico",
+        status: "ACTIVA"
+      }
+    ];
+
+    const normalizeText = (value) =>
+      value
+        .toString()
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "")
+        .toLowerCase()
+        .trim();
+
+    function credentialCard(item) {
+      const dates = `
+        <div><strong>Emisión:</strong> ${item.issue || "No registrada"}</div>
+        <div><strong>Expiración:</strong> ${item.expiration || "No registrada"}</div>
+      `;
+
+      return `
+        <article class="credential-card" data-search="${normalizeText(
+          [item.id, item.name, item.role, item.area].join(" ")
+        )}">
+          <div class="card-head">
+            <div class="id-label">ID oficial MAIER</div>
+            <div class="id-number">${item.id}</div>
+          </div>
+          <div class="card-body">
+            <h3>${item.name}</h3>
+            <p class="role">${item.role}</p>
+            <span class="status">${item.status}</span>
+            <div class="meta">
+              <div><strong>Jurisdicción:</strong> ${item.area}</div>
+              ${dates}
+            </div>
+          </div>
+        </article>
+      `;
+    }
+
+    function renderCredentials(list) {
+      const grid = document.getElementById("credentialsGrid");
+      grid.innerHTML = list.map(credentialCard).join("");
+    }
+
+    function hideResults() {
+      document.getElementById("resultsSection").classList.add("hidden");
+      document.getElementById("verifiedBanner").classList.add("hidden");
+      document.getElementById("credentialsGrid").innerHTML = "";
+    }
+
+    function searchCredentials() {
+      const input = document.getElementById("credentialSearch");
+      const message = document.getElementById("message");
+      const query = normalizeText(input.value);
+
+      if (!query) {
+        hideResults();
+        message.textContent = "Escriba el nombre completo o el número de ID para verificar.";
+        message.style.color = "#9f1d2c";
+        return;
+      }
+
+      const results = credentials.filter((item) =>
+        normalizeText(item.id) === query || normalizeText(item.name) === query
+      );
+
+      if (results.length === 1) {
+        renderCredentials(results);
+        document.getElementById("resultsSection").classList.remove("hidden");
+        document.getElementById("verifiedBanner").classList.remove("hidden");
+        message.textContent = "La credencial se encuentra activa.";
+        message.style.color = "#177245";
+      } else {
+        hideResults();
+        message.textContent = "No se encontró una credencial activa. Verifique el nombre completo o el ID.";
+        message.style.color = "#9f1d2c";
+      }
+    }
+
+    function clearSearch() {
+      document.getElementById("credentialSearch").value = "";
+      document.getElementById("message").textContent = "";
+      hideResults();
+    }
+
+    document.getElementById("credentialSearch").addEventListener("keydown", (event) => {
+      if (event.key === "Enter") searchCredentials();
+    });
+
+    hideResults();
+  </script>
+</body>
+</html>
